@@ -2,7 +2,7 @@ function renderLicenseBadge(license) {
   // Check if a license is specified
   if (license !== 'None') {
     // If a license is specified, return a string with the license badge URL
-    return `![GitHub licens badge](https://img.shields.io/badge/license-${license}-blue.svg)`;
+    return `![GitHub license badge](https://img.shields.io/badge/license-${license}-blue.svg)`;
   }
   // If no license is specified, return an empty string
   return '';
@@ -24,16 +24,20 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== 'None') {
-    return `Here is the ${license} section`;
+    return `Licensed under the ${license} license`;
   }
   return '';
   }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+
   return `# ${data.title}
 
+  ${renderLicenseBadge(data.license)}
+
   ## Description
+  ${data.description}
 
   ## Table of Contents (Optional)
 - [Installation](#installation)
@@ -42,19 +46,27 @@ function generateMarkdown(data) {
 - [License](#license)
 
   ## Installation
+  ${data.installation}
+
   ## Usage
-  ## Credits
+  ${data.usage}
+
   ## License
-  ## Badges
+  ${renderLicenseSection(data.license)}
+
   ## How to Contribute
+  ${data.contributing}
+
   ## Tests
+  ${data.test}
+
+  ## Questions
+  [${data.username}](https://github.com/${data.username})  
+  'You can reach me at: ${data.email} with any additional questions'
+
 
 `;
 }
 
-renderLicenseBadge(license)
-renderLicenseLink(license)
-renderLicenseSection(license)
-generateMarkdown(data)
 
 module.exports = generateMarkdown;
