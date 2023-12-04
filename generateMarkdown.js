@@ -13,10 +13,10 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
    // Check if a license is specified
    if (license !== 'None') {
-    // If a license is specified, return a string with the license badge URL
-    return 'https://choosealicense.com/](https://choosealicense.com/)';
+    // If a license is specified, return a string with the license link URL
+    return '![https://choosealicense.com/](https://choosealicense.com/)';
   }
-  // If no license is specified, return an empty string
+  // If no license link is specified, return an empty string
   return '';
 }
 
@@ -24,11 +24,10 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== 'None') {
-    return 'Here is the ${license} section';
+    return `Here is the ${license} section`;
   }
   return '';
   }
-}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
