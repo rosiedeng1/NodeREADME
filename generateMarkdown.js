@@ -12,12 +12,20 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
    // Check if a license is specified
-   if (license !== 'None') {
+   if (license == 'MIT') {
     // If a license is specified, return a string with the license link URL
-    return '![https://choosealicense.com/](https://choosealicense.com/)';
+    return '[MIT License](https://mit-license.org/)';
   }
-  // If no license link is specified, return an empty string
-  return '';
+  else if (license == 'APACHE 2.9') { 
+    return '[APACHE License](https://www.apache.org/licenses/LICENSE-2.0.html)';
+  }
+  else if (license == 'GPL 3.0') {
+    return '[GPL License](https://www.gnu.org/licenses/gpl-3.0.en.html#license-text)';
+  }
+    // If no license link is specified, return 
+  else {
+    return 'N/A';
+  }
 }
 
 // TODO: Create a function that returns the license section of README
@@ -53,6 +61,7 @@ function generateMarkdown(data) {
 
   ## License
   ${renderLicenseSection(data.license)}
+  ${renderLicenseLink(data.license)}
 
   ## How to Contribute
   ${data.contributing}
@@ -62,7 +71,7 @@ function generateMarkdown(data) {
 
   ## Questions
   [${data.username}](https://github.com/${data.username})  
-  'You can reach me at: ${data.email} with any additional questions'
+  'You can reach me at: ${data.email} with any additional questions (please email)'
 
 
 `;

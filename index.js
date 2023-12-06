@@ -53,9 +53,10 @@ const questions = [{
 ];
 
 function UserInput(questions) {
+  // Prompted the questions with inquirer
     inquirer.prompt(questions)
     .then(function(answers) {
-        writeToFile('README.md', generateMarkdown(answers))
+        writeToFile('Generated-README.md', generateMarkdown(answers))
     });
 
     
@@ -71,6 +72,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
+  // Called the UserInput function 
     UserInput(questions)
 }
 
