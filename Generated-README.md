@@ -3,7 +3,7 @@
   ![GitHub license badge](https://img.shields.io/badge/license-MIT-blue.svg)
 
   ## Description
-  to generate a readme file
+  to generate a readme file 
 
   ## Table of Contents (Optional)
 - [Installation](#installation)
@@ -15,7 +15,7 @@
   N/A
 
   ## Usage
-  answer the prompted questions 
+  answer the series of prompted questions
 
   ## License
   Licensed under the MIT license
